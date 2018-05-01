@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Scrape</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/sandstone/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron">
+      <h2>Mars Scraped</h2><br>
+      <h5>Using Mars sources to provide you with the most actual data about this exciting planet</h5>
+      <p><a class="btn btn-secondary" href="/scrape" role="button">Scrape Mars!</a></p>
+    </div>
+
+    <!-- Mars latest data / pictures -->
+
+    <div class="container">
+        <h4 class="heading"></h4>
+        <!--weather-->
+        <ol class="breadcrumb">
+           <li class="breadcrumb-item active">{{mars.mars_weather}}</li><br>
+        </ol>
+        <!--image and news-->
+        <div class='row'>
+        <div class='row'>
+          <div class="card bg-light col-sm-3">
+            <div class="card-header">{{mars.news_t}}</div>
+            <div class="card-body">
+             <p class="card-text">{{mars.news_p}}</p>
+            </div>
+          </div>
+          <div class="card bg-light col-sm-9">
+            <div class="card-header">Latest picture</div>
+            <div class="card-body">
+              <img src= {{mars.featured_image_url}} width="50%" height="50%"  />
+            </div>
+          </div>
+         </div>
+       </div>
+
+       <br>
+       
+       <div class='row'>
+       <div class="card border-danger col-sm-5" style="max-width: 20rem;">
+        <div class="card-header">Mars Hemispheres</div>
+        <div class="card-body">
+          <h4 class="card-title"></h4>
+          <p class="card-text">
+            <div class='row'>
+            <img src={{mars.hemisphere_image_urls[0]['img_url']}} width='35%' height='35%' hspace='10' vspace='10'>
+            <img src={{mars.hemisphere_image_urls[1]['img_url']}} width='35%' height='35%' hspace='10' vspace='10'>
+            </div>
+            <div class='row'>
+            <img src={{mars.hemisphere_image_urls[2]['img_url']}} width='35%' height='35%' hspace='10' vspace='10'>
+            <img src={{mars.hemisphere_image_urls[3]['img_url']}} width='35%' height='35%' hspace='10' vspace='10'>
+            </div>
+          </p>
+        </div>
+       </div>
+       <div class="card border-danger col-sm-7">
+        <div class="card-header">Mars Facts</div>
+        <div class="card-body">
+          <h4 class="card-title"></h4>
+          <p class="card-text">
+       <table border="1" class="dataframe"> <thead> <tr style="text-align: right;"> <th></th> <th>title</th> <th>value</th> </tr> </thead> <tbody> <tr> <th>0</th> <td>Equatorial Diameter:</td> <td>6,792 km</td> </tr> <tr> <th>1</th> <td>Polar Diameter:</td> <td>6,752 km</td> </tr> <tr> <th>2</th> <td>Mass:</td> <td>6.42 x 10^23 kg (10.7% Earth)</td> </tr> <tr> <th>3</th> <td>Moons:</td> <td>2 (Phobos &amp; Deimos)</td> </tr> <tr> <th>4</th> <td>Orbit Distance:</td> <td>227,943,824 km (1.52 AU)</td> </tr> <tr> <th>5</th> <td>Orbit Period:</td> <td>687 days (1.9 years)</td> </tr> <tr> <th>6</th> <td>Surface Temperature:</td> <td>-153 to 20 °C</td> </tr> <tr> <th>7</th> <td>First Record:</td> <td>2nd millennium BC</td> </tr> <tr> <th>8</th> <td>Recorded By:</td> <td>Egyptian astronomers</td> </tr> </tbody> </table>
+        </p>
+        </div>
+       </div>
+      </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+
+  
+</body>
+
+</html>
